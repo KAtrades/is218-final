@@ -1,6 +1,8 @@
 import type { Metadata } from 'next'
 import { Inter } from 'next/font/google'
 import './globals.css'
+import GoogleAnalytics from '@/components/GoogleAnalytics';
+import CookieBanner from '@/components/cookiebanner';
 
 const inter = Inter({ subsets: ['latin'] })
 
@@ -16,7 +18,11 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en">
-      <body className={inter.className}>{children}</body>
+      <GoogleAnalytics GA_MEASUREMENT_ID='G-J6SPCKGY0Y'/>
+      <body>
+        {children}
+      <CookieBanner/>
+      </body>
     </html>
   )
 }
